@@ -1,0 +1,41 @@
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_Category_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[sp_Category_Add]
+GO
+CREATE PROCEDURE dbo.sp_Category_Add
+(
+	@Name nvarchar(100),
+	@Status bit = null,
+	@ID int output
+)
+AS
+BEGIN
+	INSERT INTO Category(Name,Status)
+	VALUES(@Name,@Status)
+	SELECT @ID = @@Identity
+END
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_Product_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[sp_Product_Add]
+GO
+CREATE PROCEDURE dbo.sp_Product_Add
+(
+	@CategoryId int,
+	@ProductName nvarchar(100),
+	@Image image = null,
+	@Price float = null,
+	@ManufactureDate datetime = null,
+	@MadeIn nvarchar(100) = null,
+	@CreatedOn nvarchar(100) = null,
+	@Status bit = null,
+	@ID int output
+)
+AS
+BEGIN
+	If @ManufactureDate = Convert(datetime,'1/1/1900')
+		SET @ManufactureDate = null
+	INSERT INTO Product(CategoryId,ProductName,Image,Price,ManufactureDate,MadeIn,CreatedOn,Status)
+	VALUES(@CategoryId,@ProductName,@Image,@Price,@ManufactureDate,@MadeIn,@CreatedOn,@Status)
+	SELECT @ID = @@Identity
+END
+GO

@@ -1,0 +1,75 @@
+using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Text;
+using TruongViet.<@Prj@>.Entity;
+using TruongViet.<@Prj@>.Data;
+
+namespace TruongViet.<@Prj@>.Business
+{
+    public class cB<@Class@> : cBBase
+    {
+        private cD<@Class@> oD<@Class@>;
+        private <@Class@>Info o<@Class@>Info;
+
+        public cB<@Class@>()        
+        {
+            oD<@Class@> = new cD<@Class@>();
+        }
+
+        public DataTable Get(<@Class@>Info p<@Class@>Info)        
+        {
+            return oD<@Class@>.Get(p<@Class@>Info);
+        }
+
+        public int Add(<@Class@>Info p<@Class@>Info)
+        {
+			int ID = 0;
+            ID = oD<@Class@>.Add(p<@Class@>Info);
+            mErrorMessage = oD<@Class@>.ErrorMessages;
+            mErrorNumber = oD<@Class@>.ErrorNumber;
+            return ID;
+        }
+
+        public void Update(<@Class@>Info p<@Class@>Info)
+        {
+            oD<@Class@>.Update(p<@Class@>Info);
+            mErrorMessage = oD<@Class@>.ErrorMessages;
+            mErrorNumber = oD<@Class@>.ErrorNumber;
+        }
+        
+        public void Delete(<@Class@>Info p<@Class@>Info)
+        {
+            oD<@Class@>.Delete(p<@Class@>Info);
+            mErrorMessage = oD<@Class@>.ErrorMessages;
+            mErrorNumber = oD<@Class@>.ErrorNumber;
+        }
+
+        public List<<@Class@>Info> GetList(<@Class@>Info p<@Class@>Info)
+        {
+            List<<@Class@>Info> o<@Class@>InfoList = new List<<@Class@>Info>();
+            DataTable dtb = Get(p<@Class@>Info);
+            if (dtb != null)
+            {                
+                for (int i=0;i<dtb.Rows.Count;i++)
+                {
+                    o<@Class@>Info = new <@Class@>Info();
+                    <@Properties@>
+                    
+                    o<@Class@>InfoList.Add(o<@Class@>Info);
+                }
+            }
+            return o<@Class@>InfoList;
+        }
+        
+        public void ToDataRow(<@Class@>Info p<@Class@>Info, ref DataRow dr)
+        {
+			<@ToDataRow@>
+        }
+        
+        public void ToInfo(ref <@Class@>Info p<@Class@>Info, DataRow dr)
+        {
+			<@ToInfo@>
+        }
+    }
+}

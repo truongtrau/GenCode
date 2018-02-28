@@ -1,0 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+using TruongViet.<@Prj@>.Entity;
+
+namespace TruongViet.<@Prj@>.Data
+{
+    public partial class cD<@Class@> : cDBase
+    {
+    }
+}

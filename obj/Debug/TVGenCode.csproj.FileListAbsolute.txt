@@ -1,0 +1,14 @@
+D:\MYPROJECT\Govin\Gen\TVGenCode\bin\Debug\TVGenCode.exe.config
+D:\MYPROJECT\Govin\Gen\TVGenCode\obj\Debug\Interop.SQLDMO.dll
+D:\MYPROJECT\Govin\Gen\TVGenCode\obj\Debug\TVGenCode.csproj.ResolveComReference.cache
+D:\MYPROJECT\Govin\Gen\TVGenCode\bin\Debug\TVGenCode.exe
+D:\MYPROJECT\Govin\Gen\TVGenCode\bin\Debug\TVGenCode.pdb
+D:\MYPROJECT\Govin\Gen\TVGenCode\bin\Debug\Interop.SQLDMO.dll
+D:\MYPROJECT\Govin\Gen\TVGenCode\obj\Debug\ResolveAssemblyReference.cache
+D:\MYPROJECT\Govin\Gen\TVGenCode\obj\Debug\TVGenCode.frmMain.resources
+D:\MYPROJECT\Govin\Gen\TVGenCode\obj\Debug\TVGenCode.frmSinhMaTuyChon.resources
+D:\MYPROJECT\Govin\Gen\TVGenCode\obj\Debug\TVGenCode.Properties.Resources.resources
+D:\MYPROJECT\Govin\Gen\TVGenCode\obj\Debug\TVGenCode.csproj.GenerateResource.Cache
+D:\MYPROJECT\Govin\Gen\TVGenCode\obj\Debug\TVGenCode.exe.licenses
+D:\MYPROJECT\Govin\Gen\TVGenCode\obj\Debug\TVGenCode.exe
+D:\MYPROJECT\Govin\Gen\TVGenCode\obj\Debug\TVGenCode.pdb

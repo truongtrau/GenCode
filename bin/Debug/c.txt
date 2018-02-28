@@ -1,0 +1,39 @@
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_Category_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[sp_Category_Update]
+GO
+CREATE PROCEDURE dbo.sp_Category_Update
+(
+	@Name nvarchar(100),
+	@Status bit = null,
+	@CategoryId int
+)
+AS
+BEGIN
+	UPDATE Category SET  Name = @Name, Status = @Status WHERE  CategoryId = @CategoryId
+
+END
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_Product_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[sp_Product_Update]
+GO
+CREATE PROCEDURE dbo.sp_Product_Update
+(
+	@CategoryId int,
+	@ProductName nvarchar(100),
+	@Image image = null,
+	@Price float = null,
+	@ManufactureDate datetime = null,
+	@MadeIn nvarchar(100) = null,
+	@CreatedOn nvarchar(100) = null,
+	@Status bit = null,
+	@ProductId int
+)
+AS
+BEGIN
+	If @ManufactureDate = Convert(datetime,'1/1/1900')
+		SET @ManufactureDate = null
+	UPDATE Product SET  CategoryId = @CategoryId, ProductName = @ProductName, Image = @Image, Price = @Price, ManufactureDate = @ManufactureDate, MadeIn = @MadeIn, CreatedOn = @CreatedOn, Status = @Status WHERE  ProductId = @ProductId
+
+END
+GO

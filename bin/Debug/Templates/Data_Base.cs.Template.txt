@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+using TruongViet.<@Prj@>.Entity;
+
+namespace TruongViet.<@Prj@>.Data
+{
+    public partial class cD<@Class@> : cDBase
+    {
+        public DataTable Get(<@Class@>Info p<@Class@>Info)
+        {
+            ArrayList colParam = new ArrayList();
+            <@GetParameters@>
+
+            return RunProcedureGet("sp_<@Class@>_Get", colParam);            
+        }
+
+        public int Add(<@Class@>Info p<@Class@>Info)
+        {
+            ArrayList colParam = new ArrayList();
+            <@AddParameters@>
+            colParam.Add(CreateParamOut("@ID", SqlDbType.Int));
+
+            return RunProcedureOut("sp_<@Class@>_Add", colParam);
+        }
+        
+        public void Update(<@Class@>Info p<@Class@>Info)
+        {
+            ArrayList colParam = new ArrayList();
+            <@UpdateParameters@>
+
+            RunProcedure("sp_<@Class@>_Update", colParam);
+        }
+        
+        public void Delete(<@Class@>Info p<@Class@>Info)
+        {
+            ArrayList colParam = new ArrayList();
+            <@DeleteParameters@>            
+
+            RunProcedure("sp_<@Class@>_Delete", colParam);
+        }
+    }
+}

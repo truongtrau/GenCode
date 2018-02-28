@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[TVGenCode.csproj]
+SCC_Aux_Path = "\\tvserver\SourceSafe"
+SCC_Project_Name = "$/TVGenCode/TVGenCode", RGJAAAAA
+
+[TVGenCode.sln]
+SCC_Aux_Path = "\\tvserver\SourceSafe"
+SCC_Project_Name = "$/TVGenCode/TVGenCode", RGJAAAAA

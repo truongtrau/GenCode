@@ -1,0 +1,27 @@
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_Category_Delete]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[sp_Category_Delete]
+GO
+CREATE PROCEDURE dbo.sp_Category_Delete
+(
+	@CategoryId int
+)
+AS
+BEGIN
+	DELETE FROM Category  WHERE  CategoryId = @CategoryId
+
+END
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_Product_Delete]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[sp_Product_Delete]
+GO
+CREATE PROCEDURE dbo.sp_Product_Delete
+(
+	@ProductId int
+)
+AS
+BEGIN
+	DELETE FROM Product  WHERE  ProductId = @ProductId
+
+END
+GO

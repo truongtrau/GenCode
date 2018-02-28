@@ -1,0 +1,68 @@
+Project Data
+<@Prj@>
+<@Class@>
+// Chen ma vao du an cua tang Data
+<Compile Include="cDLoaiHang.cs" />
+<Compile Include="cDLoaiHang_Base.cs" >
+	<DependentUpon>cDLoaiHang.cs</DependentUpon>
+</Compile>
+
+Project Entity
+<@Prj@>
+<@Class@>
+// Chen ma vao du an cua tang Data
+<Compile Include="LoaiHangInfo.cs" />
+
+Project Business
+<@Prj@>
+<@Class@>
+// Chen ma vao du an cua tang Data
+<Compile Include="cBLoaiHang.cs" />
+
+AssemblyInfo.cs
+<@Prj@>
+
+Class: Entity
+<@Prj@>
+<@Class@>
+<@Properties@>
+int mLoaiHangID;
+string mTenLoaiHang;
+
+public int LoaiHangID
+{
+    set
+    {
+        mLoaiHangID = value;
+    }
+    get {
+        return mLoaiHangID;
+    }
+}
+public string TenLoaiHang
+{
+    set
+    {
+        mTenLoaiHang = value;
+    }
+    get
+    {
+        return mTenLoaiHang;
+    }
+}
+
+Class: Data
+<@Prj@>
+<@Class@>
+<@GetParameter@>
+<@AddParameter@>
+<@UpdateParameter@>
+<@DeleteParameter@>
+colParam.Add(CreateParam("@LoaiHangID", SqlDbType.Int, pLoaiHangInfo.LoaiHangID));
+
+Class: Data
+<@Prj@>
+<@Class@>
+<@Properties@>
+o<@Class@>Info.<@Class@>ID = Convert.ToInt32(dtb.Rows[i]["<@Class@>ID"].ToString());
+o<@Class@>Info.Ten<@Class@> = dtb.Rows[i]["Ten<@Class@>"].ToString();
